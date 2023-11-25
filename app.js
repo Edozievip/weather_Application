@@ -6,31 +6,31 @@ document.addEventListener("DOMContentLoaded", function () {
       const location = document.getElementById("locationInput").value;
 
       if (name && location) {
-          getWeather(name, location);
+          getWeatherByCountry(name, location);
       } else {
           alert("Please enter your name and location.");
       }
   });
 });
 
-function getWeather(name, location) {
-  const geoNamesApiKey = 'edozievip';
-  const geoNamesApiUrl = `http://api.geonames.org/searchJSON?q=${location}&maxRows=1&username=${geoNamesApiKey}`;
+// function getWeather(name, location) {
+//   const geoNamesApiKey = 'edozievip';
+//   const geoNamesApiUrl = `http://api.geonames.org/searchJSON?q=${location}&maxRows=1&username=${geoNamesApiKey}`;
 
-  fetch(geoNamesApiUrl)
-      .then((response) => response.json())
-      .then((geoNamesData) => {
-          if (geoNamesData.totalResultsCount > 0) {
-              const country = geoNamesData.geonames[0].countryName;
-              getWeatherByCountry(name, location, country);
-          } else {
-              getWeatherByLocation(name, location);
-          }
-      })
-      .catch((error) => {
-          console.error("Error fetching country data:", error);
-      });
-}
+//   fetch(geoNamesApiUrl)
+//       .then((response) => response.json())
+//       .then((geoNamesData) => {
+//           if (geoNamesData.totalResultsCount > 0) {
+//               const country = geoNamesData.geonames[0].countryName;
+//               getWeatherByCountry(name, location, country);
+//           } else {
+//               getWeatherByLocation(name, location);
+//           }
+//       })
+//       .catch((error) => {
+//           console.error("Error fetching country data:", error);
+//       });
+// }
 
 function getWeatherByCountry(name, location, country) {
   const apiKey = 'b65386b2d5cbb98e5e15a7c71b8979e8';
