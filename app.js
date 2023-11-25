@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("weatherForm").addEventListener("submit", function (event) {
-      event.preventDefault();
+  document.getElementById("weatherForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
       const name = document.getElementById("nameInput").value;
       const location = document.getElementById("locationInput").value;
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (name && location) {
           getWeather(name, location);
       } else {
-          alert("Please enter both name and location.");
+          alert("Please enter your name and location.");
       }
   });
 });
@@ -66,7 +66,7 @@ function getWeatherByLocation(name, location) {
       });
 }
 
-function getCountryDetails(countryCode) {
+function  getCountryDetails(countryCode) {
   const restcountriesApiUrl = `https://restcountries.com/v3.1/alpha/${countryCode}?fields=name,currencies,population,region`;
 
   return fetch(restcountriesApiUrl)
