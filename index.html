@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-3">
+        <h2>Stacked form</h2>
+        <form id="weatherForm" action="">
+          <div class="mb-3 mt-3">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="nameInput" placeholder="Enter name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="location">location:</label>
+            <input type="text" class="form-control" id="locationInput" placeholder="Enter location" name="location">
+          </div>
+          <button type="submit" id="getWeatherButton" class="btn btn-primary">Get location</button>
+        </form>
+    <div id="weatherResult"></div>
+
+      </div>
+
+
+    
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
